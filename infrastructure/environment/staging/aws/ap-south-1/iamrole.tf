@@ -1,7 +1,7 @@
 module "iamrole" {
   allowed_k8s_services = {
-    namespace     = "TSC_REGION_NAME"
-    service_name  = "TSC_ENVIRONMENT_NAME-TSC_REGION_NAME"
+    namespace    = "TSC_REGION_NAME"
+    service_name = "TSC_ENVIRONMENT_NAME-TSC_REGION_NAME"
   }
 
   allowed_iams = ["example.com"]
@@ -13,40 +13,40 @@ module "iamrole" {
 
     Statement = [
       {
-        Sid      = "PolicySimulatorAPI"
-        Action   = [
-          "iam:GetContextKeysForCustomPolicy",
-          "iam:GetContextKeysForPrincipalPolicy",
-          "iam:SimulateCustomPolicy",
+        Sid       = "PolicySimulatorAPI"
+        Action    = [
+          "iam:GetContextKeysForCustomPolicy", 
+          "iam:GetContextKeysForPrincipalPolicy", 
+          "iam:SimulateCustomPolicy", 
           "iam:SimulatePrincipalPolicy"
         ]
-        Effect   = "Allow"
-        Resource = "*"
+        Effect    = "Allow"
+        Resource  = "*"
       },
       {
-        Sid      = "PolicySimulatorConsole"
-        Action   = [
-          "iam:GetGroup",
-          "iam:GetGroupPolicy",
-          "iam:GetPolicy",
-          "iam:GetPolicyVersion",
-          "iam:GetRole",
-          "iam:GetRolePolicy",
-          "iam:GetUser",
-          "iam:GetUserPolicy",
-          "iam:ListAttachedGroupPolicies",
-          "iam:ListAttachedRolePolicies",
-          "iam:ListAttachedUserPolicies",
-          "iam:ListGroups",
-          "iam:ListGroupPolicies",
-          "iam:ListGroupsForUser",
-          "iam:ListRolePolicies",
-          "iam:ListRoles",
-          "iam:ListUserPolicies",
+        Sid       = "PolicySimulatorConsole"
+        Action    = [
+          "iam:GetGroup", 
+          "iam:GetGroupPolicy", 
+          "iam:GetPolicy", 
+          "iam:GetPolicyVersion", 
+          "iam:GetRole", 
+          "iam:GetRolePolicy", 
+          "iam:GetUser", 
+          "iam:GetUserPolicy", 
+          "iam:ListAttachedGroupPolicies", 
+          "iam:ListAttachedRolePolicies", 
+          "iam:ListAttachedUserPolicies", 
+          "iam:ListGroups", 
+          "iam:ListGroupPolicies", 
+          "iam:ListGroupsForUser", 
+          "iam:ListRolePolicies", 
+          "iam:ListRoles", 
+          "iam:ListUserPolicies", 
           "iam:ListUsers"
         ]
-        Effect   = "Allow"
-        Resource = "*"
+        Effect    = "Allow"
+        Resource  = "*"
       }
     ]
   }
@@ -62,9 +62,9 @@ module "iamrole" {
   module_name = "iamrole"
 
   kubernetes_trusts = {
-    open_id_url = module.k8scluster.k8s_openid_provider_url
-    open_id_arn = module.k8scluster.k8s_openid_provider_arn
-    service_name = "*"
-    namespace = "*"
+    open_id_url   = "${module.k8scluster.k8s_openid_provider_url}"
+    open_id_arn   = "${module.k8scluster.k8s_openid_provider_arn}"
+    service_name  = "*"
+    namespace     = "*"
   }
 }
