@@ -1,19 +1,22 @@
-module "external_state" {
-  # Specify the backend type, e.g., s3, azurerm, gcs, etc.
+module "External_State" {
+  # Specifies the backend type for the module
   backend_type = ""
 
   # Configuration settings for the backend
-  config = {}
+  config = ""
 
-  # Environment name
+  # Environment name, typically specifying the region and stage
   env_name = "staging-ap-south-1"
 
-  # Layer name
+  # Layer name for identification purposes
+  layer_name = "ads"
+
+  # Corrected to match env_name
   layer_name = "staging-ap-south-1"
 
-  # Module name
-  module_name = "External State"
+  # Module name for identification
+  module_name = "External_State"
 
-  # Source of the module, including the repository and reference if needed
-  source = "git::<repository_url>?ref=<branch_or_tag>"
+  # Module source, can be a local path or a git repository
+  source = "git::?ref="
 }
