@@ -1,0 +1,24 @@
+- command: dagger call plan -args  --src . --tfmod infrastructure/environments/checkpipeline/aws/af-south-1
+  env:
+    ENVIRONMENT: checkpipeline
+    REGION: af-south-1
+  label: Terraform Plan for Region af-south-1 in checkpipeline environment
+  plugins:
+  - avaly/gcp-secret-manager#v1.1.1:
+      env:
+        LOGS_PROVIDER_PASSWORD: LOGS_PROVIDER_PASSWORD_CHECKPIPELINE_AF_SOUTH_1
+        METRICS_PROVIDER_PASSWORD: METRICS_PROVIDER_PASSWORD_CHECKPIPELINE_AF_SOUTH_1
+  type: script
+- block: Release
+  prompt: Please unblock the pipeline
+- command: dagger call apply -args  --src . --tfmod  infrastructure/environments/checkpipeline/aws/af-south-1
+  env:
+    ENVIRONMENT: checkpipeline
+    REGION: af-south-1
+  label: Terraform Apply for Region af-south-1 in checkpipeline environment
+  plugins:
+  - avaly/gcp-secret-manager#v1.1.1:
+      env:
+        LOGS_PROVIDER_PASSWORD: LOGS_PROVIDER_PASSWORD_CHECKPIPELINE_AF_SOUTH_1
+        METRICS_PROVIDER_PASSWORD: METRICS_PROVIDER_PASSWORD_CHECKPIPELINE_AF_SOUTH_1
+  type: script
