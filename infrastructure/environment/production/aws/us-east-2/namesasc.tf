@@ -1,26 +1,13 @@
-module "External_State" {
-  # Specify the backend type
-  backend_type = "s3"
+module "namesasc" {
+  backend_type = ""
 
-  # Provide configuration details
-  config = {
-    bucket = "my-terraform-state-bucket"
-    key    = "path/to/my/key"
-    region = "us-east-2"
-  }
+  config = ""
 
-  # Define the environment name
   env_name = "production-us-east-2"
 
-  # Define the layer name
-  layer_name = "production"
+  layer_name = "production-us-east-2"
 
-  # Specify the module name
-  module_name = "External_State"
+  module_name = "namesasc"
 
-  # Provide the source of the module
-  source = "git::https://example.com/path/to/module.git?ref=main"
-
-  # Specify the version of the module
-  version = "1.0.0"
+  source = "git::git@github.com:MrDXTR/Test.git//../terraform-cloud-cops/modules/external_state?ref=main"
 }
