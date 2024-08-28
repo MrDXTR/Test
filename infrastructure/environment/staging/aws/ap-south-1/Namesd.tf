@@ -1,4 +1,4 @@
-module "Namesd" {
+module "External_State" {
   backend_type = "asd"
 
   config = "dsf"
@@ -7,18 +7,21 @@ module "Namesd" {
 
   layer_name = "staging-ap-south-1"
 
-  module_name = "Namesd"
+  module_name = "External_State"
 
-  mosame = "dfg"
+  mosame = "fdds"
 
-  source = "git::git@github.com:MrDXTR/Test.git//terraform-cloud-cops/modules/external_state?ref=main"
+  source = "git::?ref="
+
+  version = "main"
 }
 
-# This block defines a module named 'Namesd'.
-# - backend_type: Specifies the backend type for the module.
-# - config: Configuration parameter for the module.
-# - env_name: Environment name specific to 'staging-ap-south-1'.
-# - layer_name: Layer name matching the environment.
-# - module_name: Identifies the module as 'Namesd'.
-# - mosame: Additional parameter for the module.
-# - source: The source location of the module, specifying a Git repository with a specific reference.
+# Module block to define an external state configuration
+# backend_type    - Type of backend storage to use for the state
+# config          - Configuration details for the backend
+# env_name        - Environment name (e.g., staging, production)
+# layer_name      - The specific layer or environment region name
+# module_name     - The name of the module for distinction
+# mosame          - Additional custom configuration detail (purpose unclear)
+# source          - Git repository source for the module code
+# version         - Version or branch of the module to use
