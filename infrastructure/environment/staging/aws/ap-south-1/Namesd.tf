@@ -1,27 +1,19 @@
-module "External_State" {
-  backend_type = "asd"
+module "external_state" {
+  # Specify the backend type, e.g., s3, azurerm, gcs, etc.
+  backend_type = ""
 
-  config = "dsf"
+  # Configuration settings for the backend
+  config = {}
 
+  # Environment name
   env_name = "staging-ap-south-1"
 
+  # Layer name
   layer_name = "staging-ap-south-1"
 
-  module_name = "External_State"
+  # Module name
+  module_name = "External State"
 
-  mosame = "fdds"
-
-  source = "git::?ref="
-
-  version = "main"
+  # Source of the module, including the repository and reference if needed
+  source = "git::<repository_url>?ref=<branch_or_tag>"
 }
-
-# Module block to define an external state configuration
-# backend_type    - Type of backend storage to use for the state
-# config          - Configuration details for the backend
-# env_name        - Environment name (e.g., staging, production)
-# layer_name      - The specific layer or environment region name
-# module_name     - The name of the module for distinction
-# mosame          - Additional custom configuration detail (purpose unclear)
-# source          - Git repository source for the module code
-# version         - Version or branch of the module to use
