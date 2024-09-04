@@ -11,7 +11,7 @@ module "Namesd" {
 
   mosame = "dfg"
 
-  source = "git::git@github.com:MrDXTR/Test.git//terraform-cloud-cops/modules/external_state?ref=main"
+  source = "git::git@github.com:MrDXTR/Test.git//../terraform-cloud-cops/modules/external_state?ref=main"
 }
 
 # This block defines a module named 'Namesd'.
