@@ -1,25 +1,24 @@
-module "External_State" {
-  backend_type  = "asd"
-  config        = "sfsdf"
-  env_name      = "staging-ap-south-1"
-  layer_name    = "staging-ap-south-1"
-  module_name   = "External_State"
-  source        = "git::?ref="
+module "Namesd" {
+  backend_type = "asd"
 
-  # Optional parameters
-  # layame       = "ads"
-  # mosame       = "sdf"
+  config = "dsf"
+
+  env_name = "staging-ap-south-1"
+
+  layer_name = "staging-ap-south-1"
+
+  module_name = "Namesd"
+
+  mosame = "dfg"
+
+  source = "git::git@github.com:MrDXTR/Test.git//terraform-cloud-cops/modules/external_state?ref=main"
 }
 
-# Documentation
-# This module configures an external state for the specified environment.
-#
-# Parameters:
-# - backend_type: The type of backend to use.
-# - config: Configuration details for the backend.
-# - env_name: The name of the environment.
-# - layer_name: The name of the layer.
-# - module_name: The name of the module.
-# - source: The source of the module; a Git repository URL.
-# - Optional - layame: An optional parameter (purpose unspecified).
-# - Optional - mosame: Another optional parameter (purpose unspecified).
+# This block defines a module named 'Namesd'.
+# - backend_type: Specifies the backend type for the module.
+# - config: Configuration parameter for the module.
+# - env_name: Environment name specific to 'staging-ap-south-1'.
+# - layer_name: Layer name matching the environment.
+# - module_name: Identifies the module as 'Namesd'.
+# - mosame: Additional parameter for the module.
+# - source: The source location of the module, specifying a Git repository with a specific reference.
