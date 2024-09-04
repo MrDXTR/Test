@@ -1,13 +1,22 @@
-module "namesasc" {
-  backend_type = ""
+module "External_State" {
+  # Specify the backend type
+  backend_type = "asd"
 
-  config = ""
+  # Provide configuration details
+  config = "asd"
 
+  # Define the environment name
   env_name = "production-us-east-2"
 
+  # Define the layer name
   layer_name = "production-us-east-2"
 
-  module_name = "namesasc"
+  # Specify the module name
+  module_name = "External_State"
 
-  source = "git::git@github.com:MrDXTR/Test.git//../terraform-cloud-cops/modules/external_state?ref=main"
+  # Provide the source of the module
+  source = "git::?ref="
+
+  # Specify the version of the module
+  version = "main"
 }
